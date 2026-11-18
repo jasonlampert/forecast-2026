@@ -25,8 +25,9 @@ window.SITE_CONFIG = {
   //   "A fundamentals-only model (no polls). Each race's predicted Democratic share combines the district's partisan lean, incumbency, and a forecast of the national House vote from presidential approval, gas prices, income and the midterm penalty.",
   //   "Uncertainty combines one national error shared by every race with a separate error for each race. Seat totals come from 10,000 simulated elections.",
   method: [
-    "",
-    ""
+  "A regression model trained on about 2,950 contested House and Senate races from 2012–2024, with recent elections weighted more heavily. Each race's predicted Democratic share starts from the national environment and adjusts for the district's partisan lean, its previous result (when the lines haven't changed), incumbency, fundraising, scandal markers from Wikipedia, demographics, race polls where they exist, and expert ratings from Cook, Inside Elections and Sabato.",
+  "The national environment comes from the generic-ballot polling average (RealClearPolitics, 9–26 October), corrected for how far the polls missed in past elections. Because that correction rests on only seven elections, it is shrunk toward zero. It moves the Democratic share from 54.4% to 53.9%.",
+  "Uncertainty combines one national error shared by every race, a state error shared by races in the same state, and a separate error for each race, all sized from the model's misses when backtested on 2012–2024. The national error is never allowed below 2.25 points. Seat totals come from 20,000 simulated elections.",
   ],
 
   // Your data files. Leave these alone unless you renamed your files.
